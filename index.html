@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+    <style>
+        input[type="number"] {
+            width: 250px;
+            padding: 10px;
+        }
+    </style>
+    <title>Замыкание и размыкание цепи</title>
+</head>
+
+<body>
+<form onsubmit="return CountFunction(this)" method ="post">
+    <label>ЭДС источника (В):</label>
+    <input  type="range" min="0" max="100" oninput="document.getElementById('rangeValLabel1').innerHTML = this.value;" step="0.1" id="E">
+    <em id="rangeValLabel1" style="font-style: normal;"></em>
+    <br><br>
+
+    <label>Сопротивление (Ом):</label>
+    <input type="range" min="0" max="1000" oninput="document.getElementById('rangeValLabel2').innerHTML = this.value;" step="1" id="R">
+    <em id="rangeValLabel2" style="font-style: normal;"></em>
+    <br><br>
+
+    <label>Индуктивность (Гн):</label>
+    <input type="range" min="0" max="100" oninput="document.getElementById('rangeValLabel3').innerHTML = this.value;" step="0.1" id="L">
+    <em id="rangeValLabel3" style="font-style: normal;"></em>
+    <br><br>
+
+    <input type="submit"  value="Построить график">
+</form>
+
+
+<div id="myDiv_1"></div>
+<div id="myDiv_2"></div>
+<script src="index.js"></script>
+</body>
+
+</html>
